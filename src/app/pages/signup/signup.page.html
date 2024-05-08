@@ -1,0 +1,140 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <h3 class="title">Welcome Back</h3>
+    <p class="subTitle">Signup to access your account</p>
+  </div>
+  <form [formGroup]="registrationForm">
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input formControlName="name" placeholder="Name" class="input"></ion-input>
+        <!-- <ion-icon name="person-outline"></ion-icon> -->
+      </ion-item>
+      <div class="error-message"
+        *ngIf="this.registrationForm.controls?.['name'].touched && this.registrationForm.controls?.['name'].invalid">
+        <ion-text *ngIf="errorControl.name.errors?.required"><ion-icon name="alert-circle-outline"></ion-icon> Enter
+          your name </ion-text>
+      </div>
+
+      <ion-item>
+        <ion-input formControlName="email" placeholder="Email address" class="input"></ion-input>
+      </ion-item>
+      <div class="error-message"
+        *ngIf="this.registrationForm.controls?.['email'].touched && this.registrationForm.controls?.['email'].invalid">
+
+        <ion-text *ngIf="errorControl.email.errors?.required"><ion-icon name="alert-circle-outline"></ion-icon> Email is
+          required</ion-text>
+        <br *ngIf="errorControl.email.errors?.required"> <!-- Line break after the error message -->
+        <ion-text *ngIf="errorControl.email.errors?.pattern"><ion-icon name="alert-circle-outline"></ion-icon> Email
+          should be valid</ion-text>
+        <br *ngIf="errorControl.email.errors?.pattern"> <!-- Line break after the error message -->
+        <ion-text *ngIf="errorControl.email.errors.invalidInstitutionalEmail"><ion-icon
+            name="alert-circle-outline"></ion-icon> Enter your college email id</ion-text>
+        <br *ngIf="errorControl.email.errors.invalidInstitutionalEmail"> <!-- Line break after the error message -->
+      </div>
+
+      <ion-item>
+        <ion-input formControlName="password" placeholder="New Password" class="input"></ion-input>
+      </ion-item>
+      <div class="error-message"
+        *ngIf="this.registrationForm.controls?.['password'].touched && this.registrationForm.controls?.['password'].invalid">
+        <ion-text *ngIf="errorControl.password.errors?.required"><ion-icon name="alert-circle-outline"></ion-icon>
+          Password is required </ion-text>
+          <ion-text *ngIf="errorControl.password.errors?.pattern"><ion-icon name="alert-circle-outline"></ion-icon>
+            Password must have at least:
+            <ul>
+              <li>One Uppercase character</li>
+              <li>One Lowercase character</li>
+              <li>One number</li>
+            </ul>
+          </ion-text>
+          <ion-text *ngIf="errorControl.password.errors?.minlength"><ion-icon name="alert-circle-outline"></ion-icon>
+            Password should be atleast 6 character long </ion-text>
+      </div>
+
+      <ion-item>
+        <ion-input type="number" formControlName="contact" placeholder="Contact" class="input" required></ion-input>
+      </ion-item>
+      <div class="error-message"
+        *ngIf="this.registrationForm.controls?.['contact'].touched && this.registrationForm.controls?.['contact'].invalid">
+        <ion-text *ngIf="errorControl.contact.errors?.required"><ion-icon name="alert-circle-outline"></ion-icon> Enter
+          your mobile number </ion-text>
+        <ion-text *ngIf="errorControl.contact.errors?.pattern"><ion-icon name="alert-circle-outline"></ion-icon> Mobile
+          number should be exactly 10 digits </ion-text>
+      </div>
+
+      <ion-item>
+        <ion-input type="number" formControlName="rollNo" placeholder="Roll No" class="input" required></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-input type="text" formControlName="hscCollege" placeholder="HSC College" class="input"
+          required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" formControlName="hscYear" placeholder="HSC Year" class="input" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" formControlName="hscTotal" placeholder="hscTotal" class="input" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" formControlName="hscObtained" placeholder="HSC marks obtained" class="input"
+          required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" formControlName="sscCollege" placeholder="sscCollege" class="input" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="number" formControlName="sscYear" placeholder="sscYear" class="input" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="number" formControlName="sscTotal" placeholder="sscTotal" class="input" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" formControlName="sscObtained" placeholder="sscObtained" class="input"
+          required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="number" formControlName="cgpa" placeholder="CGPA (Sem 1-5)" class="input" required></ion-input>
+      </ion-item>
+      <div class="error-message"
+        *ngIf="this.registrationForm.controls?.['cgpa'].touched && this.registrationForm.controls?.['cgpa'].invalid">
+
+        <ion-text *ngIf="errorControl.cgpa.errors?.required"><ion-icon name="alert-circle-outline"></ion-icon> CGPA is
+          required</ion-text>
+        <br *ngIf="errorControl.cgpa.errors?.required"> <!-- Line break after the error message -->
+      </div>
+
+      <ion-item>
+        <ion-input type="number" formControlName="percentage" placeholder="Percentage (Sem 1-5)" class="input"
+          required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="fixed">Upload your resume</ion-label>
+        <ion-input type="file" formControlName="resume" accept=".pdf,.doc,.docx"
+          (change)="handleFileInput($event)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <!-- <ion-label position="floating">Additional Courses</ion-label> -->
+        <ion-input type="text" formControlName="additionalCourses" placeholder="Additional Courses"
+          class="input"></ion-input>
+      </ion-item>
+
+      <div class="signinLink">
+        <p>Already a member? <a style="color: #ffc33f;" [routerLink]="['/login']">Login</a></p>
+      </div>
+    </div>
+
+  </form>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="signUp()" [disabled]="!registrationForm.valid">
+      <ion-icon name="chevron-forward"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

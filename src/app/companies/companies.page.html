@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>CampusConnect</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <strong><h2 style="margin: 35px 0px 0px 20px;">Companies</h2></strong>
+  <div class="scroll" style="--t:10s">
+    <div class="logos-slide">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Nomura_logo.svg/747px-Nomura_logo.svg.png?20190328170145" />
+      <img src="https://www.freelogovectors.net/wp-content/uploads/2021/08/phonepe-logo-freelogovectors.net_-768x228.png" />
+      <img src="https://equalengineers.com/wp-content/uploads/2018/08/Deloitte-logo-1024x223.png" />
+      <img src="https://de-academic.com/pictures/dewiki/68/Deutsche_Bank-Logo.svg" />
+      <img src="https://www.pikpng.com/pngl/b/495-4959047_msci-logo-png-clipart.png" />
+      <img src="https://logos-download.com/wp-content/uploads/2022/01/Interactive_Brokers_Logo.png" />
+      <img src="https://franchisealpha.com/wp-content/uploads/2018/09/BNP-Paribas.png" />
+      <img src="https://camunda.com/wp-content/uploads/2022/09/TCS_NewLogo_Final_RGB.png" />
+
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Nomura_logo.svg/747px-Nomura_logo.svg.png?20190328170145" />
+      <img src="https://www.freelogovectors.net/wp-content/uploads/2021/08/phonepe-logo-freelogovectors.net_-768x228.png" />
+    </div>
+  </div>
+
+
+
+  <ion-card *ngFor="let company of companies">
+    <ion-card-header>
+      <ion-card-title>{{ company.name }}</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <p><strong>Location:</strong> {{ company.location }}</p>
+      <p><strong>Salary:</strong> {{ company.salaryRange }}</p>
+      <p><strong>Profile:</strong> {{ company.profile }}</p>
+      <!-- <p><strong>Questions:</strong> {{ company.questions }}</p> -->
+      <!-- Add more details as needed -->
+    </ion-card-content>
+
+    <ion-button expand="block" (click)="viewCompanyDetails(company)">View Details</ion-button>
+  </ion-card>
+  
+</ion-content>

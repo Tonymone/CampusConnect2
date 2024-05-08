@@ -1,17 +1,40 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      CampusConnect
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <strong><h2 style="margin: 35px 0px 10px 20px;">Notifications</h2></strong>
+
+  <ion-list>
+    <ion-item *ngFor="let notification of notifications">
+      <ion-label>{{ notification.message }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <br><br>
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <h2 class="ion-padding">Frequently Asked Questions</h2>
+    </ion-toolbar>
+  </ion-header> -->
+  <strong><h2 style="margin: 35px 0px 10px 20px;">Frequently Asked Questions</h2></strong>
+  <!-- <ion-title size="larger">Frequently Asked Questions</ion-title> -->
+
+  <ion-accordion-group *ngFor="let faq of faqs">
+    <ion-accordion value="{{ faq.question }}" style="margin-bottom: 10px;">
+      <ion-item slot="header">
+        {{ faq.question }}
+      </ion-item>
+      <ion-label slot="content" style="margin: 33px">
+        <p style="margin: 0px 10px 0 10px;">{{ faq.answer }}</p>
+      </ion-label>
+    </ion-accordion>
+  </ion-accordion-group>
+  <!-- <br> -->
+
 </ion-content>

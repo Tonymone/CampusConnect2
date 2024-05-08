@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+// import { addIcons } from 'ionicons';
+// import { personCircle } from 'ionicons/icons';
 
 @Component({
   selector: 'app-tabs',
@@ -7,6 +9,8 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  constructor() {
+    // addIcons({personCircle});
+  }
 
 }

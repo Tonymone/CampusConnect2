@@ -1,0 +1,125 @@
+// .input{
+//     font-size: 300;
+// }
+
+// ion-item{
+//     --background: #f1f1f1;
+//     border-radius: 10px;
+//     padding-top: 20px;
+// }
+
+// .header{
+//     margin-top: 100px;
+//     margin-bottom: 80px;
+//     text-align: center;
+
+//     .subTitle{
+//         color: gray;
+//         font-size: 0.9rem;
+//     }
+    
+//     .title{
+//         font-size: 2rem;
+//     }
+// }
+
+// .signinLink{
+//     display: flex;
+//     margin: auto;
+//     flex-direction: row;
+//     align-content: center;
+//     position: absolute;
+//     justify-content: center;
+//     padding-top: 50px;
+//     left: 0;
+//     bottom: -1;
+//     width: 80%;
+//     right: 0;
+
+//     p{
+//         font-size: 0.9rem;
+//     }
+//     a{
+//         text-decoration: none;
+//     }
+// }
+
+// .error-message {
+//     // display: inline;
+//     margin-top: 10px;
+//     margin-left: 15px;
+//     color: red;
+//     font-size: 14px;
+// }
+  
+// .error-message ul {
+//     padding-left: 20px;
+// }
+
+.input {
+    font-size: 1rem; /* Adjust the font size as needed */
+  }
+  
+  ion-item {
+    --background: #f1f1f1;
+    border-radius: 10px;
+    padding-top: 20px;
+  }
+  
+  .header {
+    margin-top: 100px;
+    margin-bottom: 80px;
+    text-align: center;
+  
+    .subTitle {
+      color: gray;
+      font-size: 0.9rem;
+    }
+  
+    .title {
+      font-size: 2rem;
+    }
+  }
+  
+  .signinLink {
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    align-content: center;
+    position: absolute;
+    justify-content: center;
+    padding-top: 50px;
+    left: 0;
+    bottom: -1;
+    width: 80%;
+    right: 0;
+  
+    p {
+      font-size: 0.9rem;
+    }
+  
+    a {
+      text-decoration: none;
+      color: #ffc33f; /* Change the color of the link */
+    }
+  }
+  
+  .error-message {
+    margin-top: 10px;
+    margin-left: 15px;
+    color: red;
+    font-size: 0.8rem; /* Adjust the font size of error messages */
+  }
+  
+  .error-message ul {
+    padding-left: 20px;
+  }
+  
+  ion-fab {
+    --background: #ffc33f; /* Change the background color of the FAB */
+  }
+  
+  ion-fab-button {
+    --background: #ffc33f; /* Change the background color of the FAB button */
+  }
+  

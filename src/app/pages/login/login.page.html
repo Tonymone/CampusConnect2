@@ -1,0 +1,41 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <h3 class="title">Welcome Back</h3>
+    <p class="subTitle">Sign in to access your account</p>
+  </div>
+  <form [formGroup] = "loginForm">
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input formControlName="email" placeholder="email" class="input"></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item>
+        <div class="error-message" *ngIf="this.loginForm.controls?.['email'].touched && this.loginForm.controls?.['email'].invalid">
+          <ion-text *ngIf="errorControl.email.errors?.required"><ion-icon name="alert-circle-outline"></ion-icon> Email is required </ion-text>
+          <br *ngIf="errorControl.email.errors?.required">
+          <ion-text *ngIf="errorControl.email.errors?.pattern"><ion-icon name="alert-circle-outline"></ion-icon> Email should be valid </ion-text>
+          <br *ngIf="errorControl.email.errors?.pattern">
+          <ion-text *ngIf="errorControl.email.errors.invalidInstitutionalEmail"><ion-icon name="alert-circle-outline"></ion-icon> Enter your college email id</ion-text>
+          <br *ngIf="errorControl.email.errors.invalidInstitutionalEmail"> <!-- Line break after the error message -->
+        </div>
+      <ion-item>
+        <ion-input formControlName="password" placeholder="password" class="input"></ion-input>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      </ion-item>
+      <div class="error-message" *ngIf="this.loginForm.controls?.['password'].touched && this.loginForm.controls?.['password'].invalid">
+        <ion-text *ngIf="errorControl.password.errors?.required"><ion-icon name="alert-circle-outline"></ion-icon> Password is required </ion-text>
+      </div>
+      <div class="forgotPassword">
+        <a [routerLink]="['/reset-password']" style="color: #ffc33f">Forgot Password?</a>
+      </div>
+      <div class="signupLink">
+        <p>New member? <a style="color: #ffc33f" [routerLink]="['/signup']">Signup now</a></p>
+      </div>
+    </div>
+
+    <ion-fab vertical="bottom" horizontal="end" style="margin: bottom 30px;">
+      <ion-fab-button (click)="logIn()" [disabled]="!loginForm.valid">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </form>
+</ion-content>

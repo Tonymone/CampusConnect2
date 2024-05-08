@@ -1,17 +1,54 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      CampusConnect
     </ion-title>
+    <ion-icon style="margin-right: 20px;" slot="end" [name]="themeToggle ? 'sunny-outline' : 'moon-outline'" (click)="toggleChange()"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <swiper-container #swiper (afterinit)="swiperReady()" (slidechange)="swiperSlideChanged($event)" [loop]="true"
+    [pagination]="true" [autoplay]="{delay:3000}">
+    <swiper-slide *ngFor="let image of images"><img [src]="image"
+        style="width: 100%; height: 300px; float: inline-start; border-radius: 8%; padding: 0px 0px 0px 0px; position: relative; opacity: 1; display: block;" /></swiper-slide>
+  </swiper-container>
+
+  <h2>Companies</h2>
+
+  <div class="scroll" style="--t:10s">
+    <div class="logos-slide">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Nomura_logo.svg/747px-Nomura_logo.svg.png?20190328170145" />
+      <img
+        src="https://www.freelogovectors.net/wp-content/uploads/2021/08/phonepe-logo-freelogovectors.net_-768x228.png" />
+      <img src="https://urbangateways.org/wp-content/uploads/2015/12/Deloitte-Logo.jpg" />
+      <img src="https://de-academic.com/pictures/dewiki/68/Deutsche_Bank-Logo.svg" />
+      <img src="https://www.pikpng.com/pngl/b/495-4959047_msci-logo-png-clipart.png" />
+      <img src="https://www.insart.com/wp-content/uploads/Interactive-Brokers.png" />
+      <img src="https://logo-marque.com/wp-content/uploads/2021/03/BNP-Paribas-Embleme-650x366.jpg" />
+      <img src="https://camunda.com/wp-content/uploads/2022/09/TCS_NewLogo_Final_RGB.png" />
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Nomura_logo.svg/747px-Nomura_logo.svg.png?20190328170145" />
+      <img
+        src="https://www.freelogovectors.net/wp-content/uploads/2021/08/phonepe-logo-freelogovectors.net_-768x228.png" />
+    </div>
+  </div>
+
+  <ion-card>
+    <img style="border-radius: 10%; height: 250px; width: 200px; margin: 15px;" alt="Dr. Balchandra Chaudhari"
+      src="https://www.spit.ac.in/wp-content/uploads/2021/05/bnc.jpg" />
+    <ion-card-header>
+      <ion-card-title>Dr. Bhalchandra Chaudhari</ion-card-title>
+      <ion-card-subtitle>Principal, SPIT</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <blockquote>
+        <h2>Education is not the learning of facts but the training of the mind to think.</h2>
+      </blockquote>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
